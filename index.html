@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Choose first. Ask Jev. Reverse the wording. Six trolley dilemmas, and a closer look at how a decision model chooses.">
+  <meta name="referrer" content="no-referrer">
+  <title>Switchyard · You, Jev, and the lever</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2318253a'/%3E%3Cpath d='M18 52V12m28 40V12M18 36 46 12' stroke='%23f2ca4c' stroke-width='5' fill='none'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <a class="skip" href="#game">Skip to game</a>
+  <header><a class="wordmark" href="./"><span aria-hidden="true">⌘</span> SWITCHYARD</a><div class="account"><span id="connection">Practice mode · no cost</span><button type="button" id="connect" class="small">Connect Pollen</button><button type="button" id="disconnect" class="small" hidden>Disconnect</button></div></header>
+  <main>
+    <section class="intro"><p class="eyebrow">A LITTLE EXPERIMENT IN DECISION-MAKING</p><h1>You, Jev,<br>and the lever.</h1><p>Make the call before the model does.<br>Then change the order of the facts. Does Jev change its mind?</p></section>
+    <section id="game" aria-label="Trolley dilemma">
+      <div class="round-head"><p class="eyebrow" id="round-number">DILEMMA 01 / 06</p><div id="progress" aria-hidden="true"></div></div>
+      <div class="game-grid"><div class="scene-panel"><div class="scene-heading"><h2 id="title">The classic switch</h2><p id="subtitle"></p></div>
+        <svg class="scene" viewBox="0 0 640 340" role="img" aria-labelledby="scene-description"><title id="scene-description">A trolley approaches a junction</title>
+          <defs><pattern id="ties" width="34" height="24" patternUnits="userSpaceOnUse"><path d="M8 2V22" stroke="#c6bba6" stroke-width="9"/></pattern></defs>
+          <path d="M20 230H608" stroke="url(#ties)" stroke-width="44"/><path d="M20 218H608M20 242H608" stroke="#7d8b95" stroke-width="4"/>
+          <path d="M250 230 430 103H608" stroke="#c6bba6" stroke-width="38" fill="none"/><path d="m250 218 180-127H608M250 242l180-127H608" stroke="#7d8b95" stroke-width="4" fill="none"/>
+          <g class="trolley"><rect x="65" y="167" width="100" height="58" rx="9" fill="#365dcb"/><rect x="76" y="177" width="26" height="23" rx="3" fill="#f7f0dc"/><rect x="111" y="177" width="26" height="23" rx="3" fill="#f7f0dc"/><circle cx="86" cy="227" r="10" fill="#18253a"/><circle cx="144" cy="227" r="10" fill="#18253a"/><path d="M58 160h114" stroke="#18253a" stroke-width="5"/></g>
+          <g id="main-target"></g><g id="side-target"></g><circle cx="265" cy="285" r="19" fill="#f2ca4c"/><path id="lever" d="m265 285-18-36" stroke="#18253a" stroke-width="8" stroke-linecap="round"/><circle cx="247" cy="249" r="7" fill="#18253a"/>
+          <text x="390" y="288" id="main-label"></text><text x="390" y="22" id="side-label"></text>
+        </svg><p id="scene-caption" class="scene-caption">Two tracks. No third option. The trolley waits for your choice.</p></div>
+        <div class="choice-panel"><p class="eyebrow">WHAT WOULD YOU DO?</p><button type="button" id="stay" class="choice"><span class="choice-title">Leave the lever</span><span id="stay-outcome"></span><span class="key" aria-hidden="true">1</span></button><button type="button" id="pull" class="choice"><span class="choice-title">Pull the lever</span><span id="pull-outcome"></span><span class="key" aria-hidden="true">2</span></button><p id="thought" class="thought"></p><div id="your-choice" role="status"></div>
+          <button type="button" id="ask" class="primary" disabled>Ask Jev about this choice</button><p class="cost-note">Optional live comparison uses your Paid Pollen. Practice is free. No request is sent until you click.</p><button type="button" id="next" class="next" hidden>Next dilemma <span aria-hidden="true">→</span></button></div></div>
+      <div id="result" class="result" hidden aria-live="polite"></div><p id="message" role="status" class="message"></p>
+    </section>
+    <section id="summary" hidden><p class="eyebrow">YOUR SIX DECISIONS</p><h2>A pattern, not a verdict.</h2><p class="summary-copy">You reached the end. There is no moral score. Compare the choices you made, or export the exact prompts and any live Jev answers.</p><div id="history"></div><button type="button" id="restart" class="primary">Start another experiment</button><button type="button" id="download" class="small">Export session JSON</button></section>
+    <section class="about"><div><span class="number">01</span><h3>Choose first.</h3><p>Keep your own answer separate from the model’s. Agreement does not make either choice right.</p></div><div><span class="number">02</span><h3>Ask, then reverse.</h3><p>Live mode asks Jev for a typed choice. The order check changes only which outcome is described first.</p></div><div><span class="number">03</span><h3>Look closer.</h3><p>Jev returns probabilities, not a written explanation. One pair of answers is an observation, not proof of a stable bias.</p></div></section>
+  </main>
+  <footer><div><strong>SWITCHYARD</strong><p class="footer-copy">Inspired by <a href="https://zachlandes.com/trolley-problem/" target="_blank" rel="noreferrer">Jev Meets the Trolley Problem</a> by Zach Landes and <a href="https://github.com/zachlandes/trolley-bench" target="_blank" rel="noreferrer">trolley-bench</a>. New prompts; no benchmark scores are reproduced here.</p></div><div><a href="https://pollinations.ai/?ref=badge" target="_blank" rel="noreferrer">Made with pollinations.ai ↗</a><p class="footer-copy"><a href="https://github.com/Saauf/switchyard" target="_blank" rel="noreferrer">Source</a> · Your choices stay in this tab.</p></div></footer>
+  <dialog id="consent"><form method="dialog"><button type="submit" class="dialog-close" aria-label="Close">×</button><p class="eyebrow">LIVE COMPARISONS</p><h2>Bring your own Pollen.</h2><p class="dialog-copy">Jev currently requires <strong>Paid Pollen</strong>. Connecting does not buy Pollen or send a decision request.</p><ul><li>Only the Jev model. No profile, balance, or account-management access.</li><li>Requested cap: <strong>0.1 Pollen</strong>; duration: <strong>1 day</strong>. Check the final limits on Pollinations’ consent screen.</li><li>One request per Ask or Reverse click. No automatic retries.</li><li>Your key stays in memory. Disconnecting forgets it here; <a href="https://enter.pollinations.ai/keys" target="_blank" rel="noreferrer">revoke access on Pollinations</a>.</li></ul><p class="dialog-copy">Pollinations will show its permissions and Terms before you approve.</p><button type="button" id="authorize" class="primary">Continue to Pollinations</button><button type="submit" class="small">Keep practicing for free</button></form></dialog>
+</body>
+</html>

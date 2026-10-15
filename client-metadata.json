@@ -1,0 +1,16 @@
+{
+  "client_id": "https://saauf.github.io/switchyard/client-metadata.json",
+  "client_name": "Switchyard",
+  "client_uri": "https://saauf.github.io/switchyard/",
+  "redirect_uris": [
+    "https://saauf.github.io/switchyard/",
+    "http://127.0.0.1:4173/"
+  ],
+  "grant_types": [
+    "authorization_code"
+  ],
+  "response_types": [
+    "code"
+  ],
+  "token_endpoint_auth_method": "none"
+}
