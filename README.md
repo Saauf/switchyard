@@ -30,6 +30,6 @@ The access token stays in memory and is forgotten on reload or disconnect. Disco
 
 ## Verification
 
-The test suite checks the unchanged facts under order reversal, empty-track and server outcomes, native response parsing, actual HTTP request encoding against a local fixture, payment/auth/rate-limit failures, PKCE, callback rejection, token exchange, and credential-free export. All generation and token responses in automated tests are local fixtures, not live Jev results. Browser checks cover the six-round practice path, consent cancellation, and responsive layout.
+The test suite checks the unchanged facts under order reversal, empty-track and server outcomes, native response parsing, actual HTTP request encoding against a local fixture, payment/auth/rate-limit failures, PKCE, callback rejection, token exchange, and credential-free export. All generation and token responses in automated tests are local fixtures, not live Jev results. Browser checks cover the six-round practice path, JSON download, restart, responsive layout, invalid callback rejection, and the deployed app’s real Pollinations consent screen and decline callback. The consent screen recognized the hosted client metadata and displayed Jev-only access, a 0.1-Pollen cap, and one-day expiry. No access was granted.
 
 No live Jev request was made during development because it is Paid-Pollen-only. A visitor with Paid Pollen can verify sign-in, Ask, Reverse, and export. The UI never substitutes test answers for real model answers.
