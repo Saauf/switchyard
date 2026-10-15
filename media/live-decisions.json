@@ -1,0 +1,50 @@
+{
+  "request": {
+    "model": "typesafe/jev-1.13",
+    "state": "A fictional runaway trolley cannot stop. You control a lever and must choose between two outcomes. The trolley stays on the main track. 5 people die. The trolley diverts to the side track. 1 person dies. The people on the main track survive. Nobody else can intervene. There is no third option.",
+    "questions": {
+      "decision": {
+        "type": "choice",
+        "instructions": "What should you do in this situation?",
+        "criteria": {
+          "stay": "Leave the lever alone.",
+          "pull": "Pull the lever to divert the trolley."
+        }
+      }
+    }
+  },
+  "answer": {
+    "choice": "pull",
+    "probabilities": {
+      "stay": 0.08,
+      "pull": 0.92
+    },
+    "inputTokens": 391,
+    "model": "typesafe/jev-1.13",
+    "id": "dec-02cebbb1-b9ad-40c0-affc-6581cd6ad511"
+  },
+  "reversedRequest": {
+    "model": "typesafe/jev-1.13",
+    "state": "A fictional runaway trolley cannot stop. You control a lever and must choose between two outcomes. The trolley diverts to the side track. 1 person dies. The people on the main track survive. The trolley stays on the main track. 5 people die. Nobody else can intervene. There is no third option.",
+    "questions": {
+      "decision": {
+        "type": "choice",
+        "instructions": "What should you do in this situation?",
+        "criteria": {
+          "stay": "Leave the lever alone.",
+          "pull": "Pull the lever to divert the trolley."
+        }
+      }
+    }
+  },
+  "reversedAnswer": {
+    "choice": "pull",
+    "probabilities": {
+      "stay": 0,
+      "pull": 1
+    },
+    "inputTokens": 391,
+    "model": "typesafe/jev-1.13",
+    "id": "dec-792312bc-d2e8-48d7-9b6b-6646ac61dd85"
+  }
+}
