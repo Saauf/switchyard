@@ -1,5 +1,4 @@
 import {
-	API,
 	MODEL,
 	askJev,
 	exportSession,
@@ -423,7 +422,7 @@ if (callback.has("code") || callback.has("error")) {
 }
 
 try {
-	const response = await fetch(`${API}/models`);
+	const response = await fetch("https://gen.pollinations.ai/models");
 	if (response.ok) {
 		const models = await response.json();
 		const model = models.find((item) => item.name === MODEL);
